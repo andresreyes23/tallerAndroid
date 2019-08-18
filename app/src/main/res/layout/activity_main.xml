@@ -29,8 +29,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_correo"
-            android:hint="Correo electrónico"
+            android:id="@+id/edUser"
+            android:hint="Usuario"
             android:inputType="textEmailAddress"
             android:layout_marginBottom="15dp"
             android:textColor="#fff"
@@ -45,7 +45,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_contrasena"
+            android:id="@+id/edPasswd"
             android:hint="Contraseña"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
@@ -58,15 +58,6 @@
             android:textColorHint="#ccc"
             android:textColor="#fff"
             android:inputType="textPassword"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:gravity="end"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="30dp"
-            android:text="¿Olvidaste tu contraseña?"/>
 
         <Button
             android:id="@+id/iniciar_sesion"
@@ -80,6 +71,7 @@
             android:text="Inciar sesión"
             android:textColor="@color/black"
             android:textSize="16sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
