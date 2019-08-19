@@ -20,6 +20,7 @@ public class Main2Activity extends AppCompatActivity {
         siguiente=findViewById(R.id.siguiente);
         Bundle delivery = getIntent().getExtras();
         String userName = delivery.getString("username");
+        String PASS = delivery.getString("passwd");
         //Toast.makeText(this,"Hola "+userName,Toast.LENGTH_LONG).show();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Hola "+userName)
@@ -43,7 +44,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-        String textoPasado = userName;
+        final String textoPasado = userName;
         TextView out = (TextView)findViewById(R.id.yaya);
         out.setText(textoPasado);
 
@@ -51,7 +52,13 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Main2Activity.this,Main4Activity.class));
-                finish();
+
+                Bundle data = new Bundle();
+                data.putString("username", textoPasado);
+                Intent ir = new Intent(Main2Activity.this, Main4Activity.class);
+                ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TOP | ir.FLAG_ACTIVITY_CLEAR_TASK);
+                ir.putExtras(data);
+                startActivity(ir);
             }
         });
 

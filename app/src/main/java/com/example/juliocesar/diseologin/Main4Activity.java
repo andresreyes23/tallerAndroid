@@ -15,6 +15,13 @@ Button volver,buscar;
         setContentView(R.layout.activity_main4);
         volver=findViewById(R.id.volver);
         buscar=findViewById(R.id.buscar);
+        Bundle delivery = getIntent().getExtras();
+        String userName = delivery.getString("username");
+
+
+        final String textoPasado = userName;
+        TextView out = (TextView)findViewById(R.id.yaya);
+        out.setText(textoPasado);
 
 
         volver.setOnClickListener(new View.OnClickListener() {
@@ -28,7 +35,12 @@ Button volver,buscar;
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Main4Activity.this,Main5Activity.class));
-                finish();
+                Bundle data = new Bundle();
+                data.putString("username", textoPasado);
+                Intent ir = new Intent(Main4Activity.this, Main5Activity.class);
+                ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TOP | ir.FLAG_ACTIVITY_CLEAR_TASK);
+                ir.putExtras(data);
+                startActivity(ir);
             }
         });
 
