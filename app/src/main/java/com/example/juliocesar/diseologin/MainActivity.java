@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
+
         btn_ir_crearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         iniciar_sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"yy",Toast.LENGTH_LONG).show();
+
                 String passwd = passw.getText().toString();
                 String user = userName.getText().toString();
                 if(passwd.length() > 0 && user.length() > 0){
@@ -47,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TOP | ir.FLAG_ACTIVITY_CLEAR_TASK);
                     ir.putExtras(data);
                     startActivity(ir);
-
                 } else {
                     Toast.makeText(MainActivity.this,"Debe ingresar usuario y contraseña",Toast.LENGTH_LONG).show();
                 }
