@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class Main5Activity extends AppCompatActivity {
 Button listo;
@@ -23,13 +22,7 @@ Button listo;
                 finish();
             }
         });
-        Bundle delivery = getIntent().getExtras();
-        String userName = delivery.getString("username");
 
-
-        final String textoPasado = userName;
-        TextView out = (TextView)findViewById(R.id.yaya);
-        out.setText(textoPasado);
     }
     public void showDatePicker(View v) {
         DialogFragment newFragment = new MyDatePickerFragment();
